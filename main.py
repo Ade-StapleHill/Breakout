@@ -26,7 +26,7 @@ class Bat:
 class Ball:
     def __init__(self):
         self.direction = math.pi + math.pi / 3 * random.random()
-        self.speed = 4
+        self.speed = 1
         self.dx = math.sin(self.direction) * self.speed
         self.dy = math.cos(self.direction) * self.speed
         self.x = screen.get_width() / 2
@@ -92,11 +92,11 @@ def gameOver():
     pygame.draw.rect(screen, (255, 255, 255), Rect(10, 10, screen.get_width() - 20, screen.get_height() - 20), 0)
 
     txt = font.render("Score", True, (0, 0, 0))
-    screen.blit(txt, (screen.get_width() / 2 - txt.get_width() / 2, 50))
+    screen.blit(txt, (int(screen.get_width() / 2 - txt.get_width() / 2), 50))
     txt = font.render(str(score), True, (0, 0, 0))
-    screen.blit(txt, (screen.get_width() / 2 - txt.get_width() / 2, 70))
+    screen.blit(txt, (int(screen.get_width() / 2 - txt.get_width() / 2), 70))
     txt = font.render("Press 'r' to retry", True, (0, 0, 0))
-    screen.blit(txt, (screen.get_width() / 2 - txt.get_width() / 2, 90))
+    screen.blit(txt, (int(screen.get_width() / 2 - txt.get_width() / 2), 90))
 
     pygame.display.update()
     while True:
@@ -143,7 +143,7 @@ for y in range(50, 350, 50):
 # Setting up score and text
 
 txt = font.render("Press space to start", True, (255, 255, 255))
-screen.blit(txt, (screen.get_width() * 0.25, screen.get_height() * 0.2))
+screen.blit(txt, (int(screen.get_width() * 0.25), int(screen.get_height() * 0.2)))
 pygame.display.update()
 wait = True
 
